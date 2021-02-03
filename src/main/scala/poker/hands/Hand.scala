@@ -1,6 +1,6 @@
 package poker.hands
 
-import poker.cards.Card
+import poker.cards.{Card, Cards}
 
 sealed trait Hand
 
@@ -34,6 +34,66 @@ object Hand {
   }
 
   case class RoyalStraightFlush(card: Card) extends Hand {
+  }
+
+  def check(cards: Cards): Hand = {
+    // todo implementation
+    null
+  }
+
+  def check2(cards: Cards): List[Hand] = {
+    // todo implementation
+    null
+  }
+
+  def checkHighCards(cards: Cards): Hand = {
+    // todo implementation
+    null
+  }
+
+  def checkOnePair(cards: Cards): Hand = {
+    // todo implementation
+    null
+  }
+
+  def checkTwoPair(cards: Cards): Hand = {
+    // todo implementation
+    null
+  }
+
+  def checkThreeOfAKind(cards: Cards): Hand = {
+    // todo implementation
+    null
+  }
+
+  def checkStraight(cards: Cards): Hand = {
+    // todo implementation
+    null
+  }
+
+  def checkFlush(cards: Cards): Hand = {
+    // todo implementation
+    null
+  }
+
+  def checkFullHouse(cards: Cards): Hand = {
+    // todo implementation
+    null
+  }
+
+  def checkFourOfAKind(cards: Cards): Hand = {
+    // todo implementation
+    null
+  }
+
+  def checkStraightFlush(cards: Cards): Hand = {
+    // todo implementation
+    null
+  }
+
+  def checkRoyalStraightFlush(cards: Cards): Hand = {
+    // todo implementation
+    null
   }
 
 }
