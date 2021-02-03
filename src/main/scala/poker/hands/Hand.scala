@@ -36,7 +36,18 @@ object Hand {
   case class RoyalStraightFlush(card: Card) extends Hand {
   }
 
-  def check(cards: Cards): Hand = ???
+  def check(cards: Cards): Hand = List(
+    checkHighCards(cards),
+    checkOnePair(cards),
+    checkTwoPair(cards),
+    checkThreeOfAKind(cards),
+    checkStraight(cards),
+    checkFlush(cards),
+    checkFullHouse(cards),
+    checkFourOfAKind(cards),
+    checkStraightFlush(cards),
+    checkRoyalStraightFlush(cards)
+  ).flatten.last
 
   def checkHighCards(cards: Cards): Option[Hand] = ???
 
