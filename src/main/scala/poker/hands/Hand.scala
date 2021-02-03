@@ -38,26 +38,24 @@ object Hand {
 
   def check(cards: Cards): Hand = ???
 
-  def check2(cards: Cards): List[Hand] = ???
+  def checkHighCards(cards: Cards): Option[Hand] = ???
 
-  def checkHighCards(cards: Cards): Hand = ???
+  def checkOnePair(cards: Cards): Option[Hand] = ???
 
-  def checkOnePair(cards: Cards): Hand = ???
+  def checkTwoPair(cards: Cards): Option[Hand] = ???
 
-  def checkTwoPair(cards: Cards): Hand = ???
+  def checkThreeOfAKind(cards: Cards): Option[Hand] = ???
 
-  def checkThreeOfAKind(cards: Cards): Hand = ???
+  def checkStraight(cards: Cards): Option[Hand] = ???
 
-  def checkStraight(cards: Cards): Hand = ???
+  def checkFlush(cards: Cards): Option[Hand] = ???
 
-  def checkFlush(cards: Cards): Hand = ???
+  def checkFullHouse(cards: Cards): Option[Hand] = ???
 
-  def checkFullHouse(cards: Cards): Hand = ???
+  def checkFourOfAKind(cards: Cards): Option[Hand] = ???
 
-  def checkFourOfAKind(cards: Cards): Hand = ???
+  def checkStraightFlush(cards: Cards): Option[Hand] = ???
 
-  def checkStraightFlush(cards: Cards): Hand = ???
-
-  def checkRoyalStraightFlush(cards: Cards): Hand = ???
+  def checkRoyalStraightFlush(cards: Cards): Option[Hand] = ???
 
 }

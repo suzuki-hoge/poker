@@ -4,5 +4,5 @@ case class Card(suit: Suit, rank: Rank) {
 }
 
 object Card {
-  def fromString(s: String): List[Card] = ???
+  def fromString(s: String): Either[String, Card] = ???
 }
