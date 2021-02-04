@@ -1,6 +1,17 @@
 package poker.cards
 
+/**
+  * ランク
+  *
+  * @param v 数値
+  */
 case class Rank(v: Int) {
+  /**
+    * ランクの大小比較を行う
+    *
+    * @param o 比較対象のランク
+    * @return
+    */
   def <(o:Rank):Boolean = this.v < o.v
 
   override def toString: String = v match {
@@ -12,7 +23,16 @@ case class Rank(v: Int) {
   }
 }
 
+/**
+  * ランク
+  */
 object Rank {
+  /**
+    * 文字列をパースしてランクにする
+    *
+    * @param s 文字列
+    * @return ランクとして不正な文字列の場合は失敗し、メッセージを返す
+    */
   def fromString(s: String): Either[String, Rank] = s match {
     case "A" => Right(Rank(14))
     case "K" => Right(Rank(13))

@@ -2,40 +2,122 @@ package poker.hands
 
 import poker.cards.{Card, Cards}
 
+/**
+  * 手役
+  */
 sealed trait Hand
 
+/**
+  * 手役
+  */
 object Hand {
 
+  /**
+    * ハイカード
+    *
+    * 常に成立する
+    *
+    * @param card 手役を構成するカードのうち一番強いもの
+    */
   case class HighCards(card: Card) extends Hand {
   }
 
+  /**
+    * ワンペア
+    *
+    * 同ランクによる 2 枚組が 1 セット存在する場合に成立する
+    *
+    * @param card 手役を構成するカードのうち一番強いもの
+    */
   case class OnePair(card: Card) extends Hand {
   }
 
+  /**
+    * ツーペア
+    *
+    * 同ランクによる 2 枚組が 2 セット存在する場合に成立する
+    *
+    * @param card 手役を構成するカードのうち一番強いもの
+    */
   case class TwoPair(card: Card) extends Hand {
   }
 
+  /**
+    * スリーオブアカインド
+    *
+    * 同ランクによる 3 枚組が 1 セット存在する場合に成立する
+    *
+    * @param card 手役を構成するカードのうち一番強いもの
+    */
   case class ThreeOfAKind(card: Card) extends Hand {
   }
 
+  /**
+    * ストレート
+    *
+    * 全てのランクが連続する場合に成立する
+    *
+    * @param card 手役を構成するカードのうち一番強いもの
+    */
   case class Straight(card: Card) extends Hand {
   }
 
+  /**
+    * フラッシュ
+    *
+    * 全てのスートが同一の場合に成立する
+    *
+    * @param card 手役を構成するカードのうち一番強いもの
+    */
   case class Flush(card: Card) extends Hand {
   }
 
+  /**
+    * フルハウス
+    *
+    * 同ランクによる 2 枚組が 1 セットと同ランクによる 3 枚組が 1 セット存在する場合に成立する
+    *
+    * @param card 手役を構成するカードのうち一番強いもの
+    */
   case class FullHouse(card: Card) extends Hand {
   }
 
+  /**
+    * フォーオブアカインド
+    *
+    * 同ランクによる 4 枚組が 1 セット存在する場合に成立する
+    *
+    * @param card 手役を構成するカードのうち一番強いもの
+    */
   case class FourOfAKind(card: Card) extends Hand {
   }
 
+  /**
+    * ストレートフラッシュ
+    *
+    * 全てのランクが連続し、全てのスートが同一の場合に成立する
+    *
+    * @param card 手役を構成するカードのうち一番強いもの
+    */
   case class StraightFlush(card: Card) extends Hand {
   }
 
+  /**
+    * ロイヤルストレートフラッシュ
+    *
+    * 一番弱いカードのランクが 10 であり、全てのランクが連続し、全てのスートが同一の場合に成立する
+    *
+    * @param card 手役を構成するカードのうち一番強いもの
+    */
   case class RoyalStraightFlush(card: Card) extends Hand {
   }
 
+  /**
+    * 成立する手役のうち最も強いものを判定する
+    *
+    * @param cards 手札
+    * @return 成立した最も強い手役
+    */
   def check(cards: Cards): Hand = List(
     checkHighCards(cards),
     checkOnePair(cards),

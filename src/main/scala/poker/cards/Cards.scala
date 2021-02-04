@@ -1,10 +1,35 @@
 package poker.cards
 
+/**
+  * 手札
+  *
+  * 5 枚であることが保証されている
+  *
+  * カードに重複がないことが保証されている
+  *
+  * カードの強さの昇順でソートされている
+  *
+  * @param vs カード
+  */
 case class Cards(vs: List[Card]) {
+  /**
+    * 一番強いカードを返す
+    *
+    * @return
+    */
   def strongest(): Card = vs.last
 }
 
+/**
+  * 手札
+  */
 object Cards {
+  /**
+    * 文字列をパースして手札にする
+    *
+    * @param s 文字列
+    * @return 手札として不正なフォーマットの場合、カードのパースに失敗した場合、カードに重複が発生している場合は、メッセージを返す
+    */
   def fromString(s: String): Either[String, Cards] = for {
     tup <- split(s)
     c1 <- Card.fromString(tup._1)

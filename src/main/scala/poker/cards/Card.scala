@@ -1,11 +1,26 @@
 package poker.cards
 
+/**
+  * カード
+  *
+  * @param suit スート
+  * @param rank ランク
+  */
 case class Card(suit: Suit, rank: Rank) {
   override def toString: String = s"$suit-$rank"
 
+  /**
+    * カードの大小比較を行う
+    *
+    * @param o 比較対象のカード
+    * @return
+    */
   def <(o: Card): Boolean = if (this.rank == o.rank) this.suit < o.suit else this.rank < o.rank
 }
 
+/**
+  * カード
+  */
 object Card {
   def fromString(s: String): Either[String, Card] = for {
     tup <- split(s)
