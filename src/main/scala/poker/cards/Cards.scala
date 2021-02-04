@@ -1,6 +1,7 @@
 package poker.cards
 
 case class Cards(vs: List[Card]) {
+  def strongest(): Card = vs.last
 }
 
 object Cards {
