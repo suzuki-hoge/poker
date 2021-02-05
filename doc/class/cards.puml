@@ -1,0 +1,36 @@
+@startuml
+
+package cards {
+    enum Suit {
+        S / H / D / C
+        <()
+        toString()
+        {static} fromString()
+    }
+
+    class Rank {
+        Int
+        <()
+        toString()
+        {static} fromString()
+    }
+
+    class Card {
+        Suit
+        Rank
+        <()
+        toString()
+        {static} fromString()
+    }
+
+    class Cards {
+        List[Card]
+        {static} fromString()
+    }
+}
+
+Card *--> Suit
+Card *--> Rank
+Cards *-d-> "5" Card
+
+@enduml

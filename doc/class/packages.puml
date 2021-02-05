@@ -1,0 +1,22 @@
+@startuml
+
+class Game
+
+package hands {
+    class Hands
+}
+
+package cards {
+    class Cards
+    class Card
+
+    Cards --> Card
+}
+
+Game ---> Hands
+Game ---> Cards
+
+Hands -r-> Cards
+Hands -r-> Card
+
+@enduml
